@@ -23,14 +23,20 @@ class Login extends StatelessWidget {
                 Center(
                   child: Column(
                     children: <Widget>[
-                      SizedBox(height: 65),
+                      Container(
+                        height: MediaQuery.of(context).size.height / 3,
+                        decoration: BoxDecoration(
 
+                          image: DecorationImage(image: AssetImage("images/atte.png"), fit: BoxFit.fill),
+                        ),
+                      ),
+
+                      widgets.buildSignin(context)
                     ],
                   ),
                 ),
               ],
             ),
-
           ],
         ),
       ),

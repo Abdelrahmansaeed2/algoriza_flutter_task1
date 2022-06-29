@@ -42,14 +42,10 @@ class _onbording_screenState extends State<onbording_screen> {
 
         child: Stack(
           children: <Widget>[
-            //make curves for desgining
-            //lets make content
             //lets first make content for small screens that is less than 580
-
             screenSize.width < 580 ?
-
             Container(
-              //for large screens
+              //for small screens
               height: screenSize.height,
               width: screenSize.width,
               child:Column(
@@ -215,7 +211,7 @@ class _onbording_screenState extends State<onbording_screen> {
             ) :
 
             Container(
-              //for large
+              //for large screen
               width: screenSize.width,
               height: screenSize.height,
               child: Column(

@@ -1,6 +1,8 @@
+import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class Widgets {
   Widget buildLogo(context) {
@@ -149,38 +151,99 @@ class Widgets {
     );
   }
 
-  Widget buildSignUn(context) {
-    return Row(
+  Widget buildSignin(context) {
+    final screenSize = MediaQuery.of(context).size;
+    return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Padding(
-          padding: EdgeInsets.only(top: 40),
-          child: FlatButton(
-            onPressed: () {},
-            child: RichText(
-              text: TextSpan(
-                children: [
-                  TextSpan(
-                    text: 'Dont have an account? ',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: MediaQuery.of(context).size.height / 40,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                  TextSpan(
-                    text: 'Sigin Up ',
-                    style: TextStyle(
-                      color: Colors.lightBlue[800],
-                      fontSize: MediaQuery.of(context).size.height / 40,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
+          padding: EdgeInsets.only(right: 150,top: 40),
+          child:       Text(
+
+            "Welcome to Fashion Daily",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 15,
+              color: Colors.grey,
             ),
           ),
         )
+     , Padding(
+          padding: EdgeInsets.only(right: 250,top: 10),
+          child:       Text(
+            textAlign: TextAlign.center,
+
+            "Sign in",
+            style: TextStyle(
+              fontSize: 25,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+
+        ),
+        Padding(
+          padding: EdgeInsets.only(right: 220,top: 20),
+          child:       Text(
+
+            "Phone number",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 15,
+              color: Colors.grey,
+            ),
+          ),
+        )
+        ,Padding(
+          padding: EdgeInsets.only(right: 250,bottom: 5),
+          child:       CountryCodePicker(
+            onChanged: print,
+            // Initial selection and favorite can be one of code ('IT') OR dial_code('+39')
+
+            // optional. Shows only country name and flag
+            showCountryOnly: true,
+            // optional. Shows only country name and flag when popup is closed.
+            showOnlyCountryWhenClosed: false,
+            // optional. aligns the flag and the Text left
+            alignLeft: false,
+          ),
+        )
+        ,Padding(
+
+          padding: EdgeInsets.only(bottom: 5),
+          child:     Container(
+            width: screenSize.width/1.2,
+
+
+            child: MaterialButton(
+
+                onPressed: () {
+
+                },
+
+                color: Colors.blue,
+                textColor: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: const Text(
+                    "Sign in"),
+              ),
+          ),
+          ),
+        Padding(
+          padding: EdgeInsets.only(top: 10),
+          child:       Text(
+
+            "Or",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 15,
+              color: Colors.grey,
+            ),
+          ),
+        )
+        ,
+
       ],
     );
   }
