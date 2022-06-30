@@ -13,14 +13,7 @@ class Login extends StatelessWidget {
             Stack(
               children: <Widget>[
 
-                Container(
-                  height: MediaQuery.of(context).size.height / 3,
-                  decoration: BoxDecoration(
-
-                    image: DecorationImage(image: AssetImage("images/atte.png"), fit: BoxFit.fill),
-                  ),
-                ),
-                Center(
+               Center(
                   child: Column(
                     children: <Widget>[
                       Container(

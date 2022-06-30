@@ -75,12 +75,7 @@ class _onbording_screenState extends State<onbording_screen> {
                                 child: MaterialButton(
                                   onPressed: () {
                                     if (currentIndex == contents.length - 1) {
-                                      Navigator.pushReplacement(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (_) => Login(),
-                                        ),
-                                      );
+
                                     }
                                     controller.nextPage(
                                       duration: const Duration(milliseconds: 100),
@@ -145,12 +140,7 @@ class _onbording_screenState extends State<onbording_screen> {
                                       currentIndex == contents.length - 1 ? "Get Started" : "Get Started"),
                                   onPressed: () {
                                     if (currentIndex == contents.length - 1) {
-                                      Navigator.pushReplacement(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (_) => Home(),
-                                        ),
-                                      );
+
                                     }
                                     controller.nextPage(
                                       duration: Duration(milliseconds: 100),
@@ -172,7 +162,12 @@ class _onbording_screenState extends State<onbording_screen> {
                                 Padding(
                                   padding: EdgeInsets.only(top: 0),
                                   child: FlatButton(
-                                    onPressed: () {},
+                                    onPressed: () { Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (_) => Login(),
+                                      ),
+                                    );},
                                     child: RichText(
                                       text: TextSpan(
                                         children: [
@@ -264,12 +259,16 @@ class _onbording_screenState extends State<onbording_screen> {
 
   Container buildDot(int index, BuildContext context) {
     return Container(
+
+
       height: 10,
       width: currentIndex == index ? 25 : 10,
       margin: EdgeInsets.only(right: 5),
+
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
           color: const Color(0xFFE7BC82),
+
       ),
     );
   }
