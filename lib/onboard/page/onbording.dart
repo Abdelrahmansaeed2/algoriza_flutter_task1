@@ -37,8 +37,8 @@ class _onbording_screenState extends State<onbording_screen> {
 
       body: Container(
 
-        width: screenSize.width,
-        height: screenSize.height,
+
+
 
         child: Stack(
           children: <Widget>[
@@ -46,8 +46,8 @@ class _onbording_screenState extends State<onbording_screen> {
             screenSize.width < 580 ?
             Container(
               //for small screens
-              height: screenSize.height,
-              width: screenSize.width,
+
+
               child:Column(
                 children: [
                   Expanded(
@@ -63,139 +63,142 @@ class _onbording_screenState extends State<onbording_screen> {
                         return Padding(
                           padding: const EdgeInsets.all(30),
 
-                          child: Column(
-                            children: [
-                              Container(
+                          child: Container(
 
-                                height: 60,
-
-
-                                margin: const EdgeInsets.fromLTRB(260, 20, 0, 20),
-                                width: 140,
-                                child: MaterialButton(
-                                  onPressed: () {
-                                    if (currentIndex == contents.length - 1) {
-
-                                    }
-                                    controller.nextPage(
-                                      duration: const Duration(milliseconds: 100),
-                                      curve: Curves.bounceIn,
-                                    );
-                                  },
-
-                                  color: const Color(0xFFFAF2E7),
-                                  textColor: Colors.black,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(60),
-                                  ),
-                                  child: const Text(
-                                      "Skip"),
-                                ),
-                              ),
-
-                              Container(
-
-
-
-                                child: Image.asset("images/logo.png", fit: BoxFit.fill,),
-                              ),
-                              Image.asset(
-                                contents[i].image,
-                                height: 300,
-                              ),
-                              Text(
-                                textAlign: TextAlign.center,
-
-                                contents[i].title,
-                                style: TextStyle(
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(height: 20),
-                              Text(
-                                contents[i].discription,
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontSize: 15,
-                                  color: Colors.grey,
-                                ),
-                              ),
-                              Container(
-                                margin: EdgeInsets.only(top: 32),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: List.generate(
-                                    contents.length,
-                                        (index) => buildDot(index, context),
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                height: 60,
-                                width: double.infinity,
-                                margin: EdgeInsets.only(top: 32),
-                                child: FlatButton(
-                                  child: Text(
-                                      currentIndex == contents.length - 1 ? "Get Started" : "Get Started"),
-                                  onPressed: () {
-                                    if (currentIndex == contents.length - 1) {
-
-                                    }
-                                    controller.nextPage(
-                                      duration: Duration(milliseconds: 100),
-                                      curve: Curves.bounceIn,
-                                    );
-                                  },
-                                  color: const Color(0xFF51AFAB),
-                                  textColor: Colors.white,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                ),
-                              )
-,
-                          Container(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
+                            child: Column(
                               children: [
-                                Padding(
-                                  padding: EdgeInsets.only(top: 0),
+                                Container(
+
+
+
+
+                                  margin: const EdgeInsets.fromLTRB(260, 20, 0, 20),
+                                  width: 140,
+                                  child: MaterialButton(
+                                    onPressed: () {
+                                      if (currentIndex == contents.length - 1) {
+
+                                      }
+                                      controller.nextPage(
+                                        duration: const Duration(milliseconds: 100),
+                                        curve: Curves.bounceIn,
+                                      );
+                                    },
+
+                                    color: const Color(0xFFFAF2E7),
+                                    textColor: Colors.black,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(60),
+                                    ),
+                                    child: const Text(
+                                        "Skip"),
+                                  ),
+                                ),
+
+                                Container(
+
+
+
+                                  child: Image.asset("images/logo.png", fit: BoxFit.fill,),
+                                ),
+                                Image.asset(
+                                  contents[i].image,
+                                  height: 200,
+                                ),
+                                Text(
+                                  textAlign: TextAlign.center,
+
+                                  contents[i].title,
+                                  style: TextStyle(
+                                    fontSize: 25,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                SizedBox(height: 10),
+                                Text(
+                                  contents[i].discription,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    color: Colors.grey,
+                                  ),
+                                ),
+                                Container(
+                                  margin: EdgeInsets.only(top: 32),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: List.generate(
+                                      contents.length,
+                                          (index) => buildDot(index, context),
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  height: 30,
+                                  width: double.infinity,
+                                  margin: EdgeInsets.only(top: 32),
                                   child: FlatButton(
-                                    onPressed: () { Navigator.pushReplacement(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (_) => Login(),
-                                      ),
-                                    );},
-                                    child: RichText(
-                                      text: TextSpan(
-                                        children: [
-                                          TextSpan(
-                                            text: 'Dont have an account? ',
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: MediaQuery.of(context).size.height / 45,
-                                              fontWeight: FontWeight.w400,
-                                            ),
-                                          ),
-                                          TextSpan(
-                                            text: 'Sigin Up ',
-                                            style: TextStyle(
-                                              color: Colors.teal,
-                                              fontSize: MediaQuery.of(context).size.height / 45,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
+                                    child: Text(
+                                        currentIndex == contents.length - 1 ? "Get Started" : "Get Started"),
+                                    onPressed: () {
+                                      if (currentIndex == contents.length - 1) {
+
+                                      }
+                                      controller.nextPage(
+                                        duration: Duration(milliseconds: 100),
+                                        curve: Curves.bounceIn,
+                                      );
+                                    },
+                                    color: const Color(0xFF51AFAB),
+                                    textColor: Colors.white,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
                                     ),
                                   ),
                                 )
+,
+                            Container(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(top: 0),
+                                    child: FlatButton(
+                                      onPressed: () { Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (_) => Login(),
+                                        ),
+                                      );},
+                                      child: RichText(
+                                        text: TextSpan(
+                                          children: [
+                                            TextSpan(
+                                              text: 'Dont have an account? ',
+                                              style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: MediaQuery.of(context).size.height / 45,
+                                                fontWeight: FontWeight.w400,
+                                              ),
+                                            ),
+                                            TextSpan(
+                                              text: 'Sigin Up ',
+                                              style: TextStyle(
+                                                color: Colors.teal,
+                                                fontSize: MediaQuery.of(context).size.height / 45,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            )
                               ],
                             ),
-                          )
-                            ],
                           ),
                         );
                       },
