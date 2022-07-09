@@ -103,7 +103,7 @@ class _onbording_screenState extends State<onbording_screen> {
                                 ),
                                 Image.asset(
                                   contents[i].image,
-                                  height: 200,
+                                  height: screenSize.height/3.1,
                                 ),
                                 Text(
                                   textAlign: TextAlign.center,
